@@ -94,18 +94,18 @@ body {
 
 /* ناوبری اصلی - شیشه‌ای */
 .main-navigation {
-    background-color: rgba(0, 0, 0, 0.2); /* شفافیت بیشتر برای ناوبری */
-    backdrop-filter: blur(5px); /* بلور کمتر برای ناوبری */
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     
-    padding: 8px 0;
+    padding: 8px 0; /* padding عمودی ثابت */
     border-top: 1px solid var(--border-glass);
     border-bottom: 1px solid var(--border-glass);
     width: 100%;
-    overflow-x: auto;
+    overflow-x: auto; /* فعال کردن اسکرول افقی */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
-    scrollbar-color: var(--accent-color) rgba(0, 0, 0, 0.3); /* اسکرول بار هماهنگ */
+    scrollbar-color: var(--accent-color) var(--primary-bg-transparent-20);
 }
 
 /* Webkit (Chrome, Safari) scrollbar styling */
@@ -114,23 +114,23 @@ body {
 }
 
 .main-navigation::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--primary-bg-transparent-20);
 }
 
 .main-navigation::-webkit-scrollbar-thumb {
     background-color: var(--accent-color);
     border-radius: 10px;
-    border: 2px solid rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--primary-bg-transparent-20);
 }
 
 
 .menu-nav-list {
     list-style: none;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    gap: 12px;
-    padding: 0 15px;
+    flex-wrap: nowrap; /* آیتم‌ها را در یک خط نگه می‌دارد */
+    justify-content: center; /* در حالت دسکتاپ وسط چین */
+    gap: 12px; /* فاصله بین آیتم‌ها */
+    padding: 0 15px; /* padding افقی برای فضای کناری */
 }
 
 .menu-nav-list li a {
@@ -143,7 +143,7 @@ body {
     border-radius: 18px;
     transition: all 0.3s ease;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-    white-space: nowrap;
+    white-space: nowrap; /* جلوگیری از شکستن متن به خط بعدی */
 }
 
 .menu-nav-list li a:hover,
@@ -398,9 +398,14 @@ body {
     .main-navigation {
         padding: 8px 0;
     }
+    .menu-nav-list {
+        gap: 8px; /* کاهش گپ در تبلت */
+        padding: 0 15px 0 25px; /* padding-right 25px برای فضای کافی در تبلت */
+        justify-content: flex-start; /* شروع از راست در تبلت */
+    }
     .menu-nav-list li a {
-        font-size: 0.9em;
-        padding: 7px 10px;
+        font-size: 0.8em; /* فونت کمی کوچکتر در تبلت */
+        padding: 6px 9px; /* پدینگ کمتر در تبلت */
     }
     .cafe-name {
         font-size: 3em;
@@ -443,11 +448,13 @@ body {
         padding: 5px 0;
     }
     .menu-nav-list {
-        gap: 10px;
+        gap: 6px; /* گپ کمتر بین آیتم‌ها در موبایل */
+        padding: 0 10px 0 20px; /* padding-right 20px برای فضای کافی در موبایل */
+        justify-content: flex-start; /* شروع از راست در موبایل */
     }
     .menu-nav-list li a {
-        font-size: 0.85em;
-        padding: 6px 9px;
+        font-size: 0.75em; /* فونت کوچکتر برای آیتم‌های ناوبری */
+        padding: 4px 7px; /* پدینگ کمتر */
     }
 
     .menu-container {
@@ -504,9 +511,13 @@ body {
     .cafe-slogan {
         font-size: 0.8em;
     }
+    .menu-nav-list {
+        gap: 4px; /* گپ حتی کمتر */
+        padding: 0 8px 0 15px; /* padding-right 15px برای فضای کافی در موبایل کوچک‌تر */
+    }
     .menu-nav-list li a {
-        font-size: 0.8em;
-        padding: 5px 8px;
+        font-size: 0.7em; /* فونت باز هم کوچکتر */
+        padding: 3px 6px; /* پدینگ باز هم کمتر */
     }
     .menu-category h2 {
         font-size: 1.8em;
