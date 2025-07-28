@@ -3,750 +3,683 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منوی کافه بن‌سیمو | BenSimu Cafe Menu</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+    <title>منوی کافه بنیسیمو</title>
 
-    <header class="main-header">
-        <div class="header-content">
-            <div class="logo-container">
-                <img src="images/logo.png" alt="لوگوی کافه بن‌سیمو" class="cafe-logo">
-            </div>
-            <h1 class="cafe-name">کافه بن‌سیمو</h1>
-            <p class="cafe-slogan">آجودانیه</p>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS config must be placed AFTER the CDN script -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        vazirmatn: ['Vazirmatn', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6f4e37', // قهوه‌ای اصلی
+                        secondary: '#8B4513', // قهوه‌ای پررنگ‌تر برای آیکون‌ها
+                        accent: '#D2B48C', // قهوه‌ای روشن برای خطوط
+                        textDark: '#4E423D', // متن تیره
+                        textLight: '#fdfaf6', // پس‌زمینه روشن
+                        cardBg: '#ffffff', // پس‌زمینه کارت
+                        cardBorder: '#e3dcd2', // حاشیه کارت
+                        priceBg: '#e9ede3', // پس‌زمینه قیمت
+                        priceText: '#556b2f', // متن قیمت
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts - Vazirmatn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="font-vazirmatn bg-textLight text-textDark m-0">
+
+    <header class="bg-[#f7f2e9] py-4 px-2 shadow-md sticky top-0 z-50">
+        <div class="flex items-center justify-center gap-4 mb-4">
+            <img src="images/logo-benissimo.jpeg" alt="لوگوی کافه بنیسیمو" class="w-14 h-14 rounded-full object-cover">
+            <h1 class="text-3xl text-primary font-bold m-0">کافه بنیسیمو</h1>
         </div>
 
-        <nav class="main-navigation">
-            <ul class="menu-nav-list">
-                <li><a href="#breakfast">صبحانه</a></li>
-                <li><a href="#pizza">پیتزا</a></li>
-                <li><a href="#pasta">پاستا</a></li>
-                <li><a href="#steak">استیک</a></li>
-                <li><a href="#panini">پنینی</a></li>
-                <li><a href="#burger">برگر</a></li>
-                <li><a href="#salad">سالاد</a></li>
-                <li><a href="#appetizer">پیش غذا</a></li>
-                <li><a href="#iced-coffee-bar">آیس کافی بار</a></li>
-                <li><a href="#ice-cream">بستنی</a></li>
-                <li><a href="#natural-juices">آبمیوه طبیعی</a></li>
-                <li><a href="#hot-coffee-drinks">نوشیدنی گرم بر پایه قهوه</a></li>
-                <li><a href="#tea-herbal-tea">چای و دمنوش</a></li>
-                <li><a href="#desserts">کیک و دسر</a></li>
-                <li><a href="#brewed-coffee">قهوه‌های دمی</a></li>
-            </ul>
+        <!-- ناوبری جدید با آیکون‌ها - دو ردیفه و واکنش‌گرا -->
+        <nav class="icon-navigation flex flex-wrap justify-center gap-x-4 gap-y-3 overflow-x-auto pb-2">
+            <a href="#breakfast" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-egg text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">صبحانه</span>
+            </a>
+            <a href="#pizza" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-pizza-slice text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">پیتزا</span>
+            </a>
+            <a href="#pasta" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-bowl-food text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">پاستا</span>
+            </a>
+            <a href="#steak" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-drumstick-bite text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">استیک</span>
+            </a>
+            <a href="#panini" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-bread-slice text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">پنینی</span>
+            </a>
+            <a href="#burger" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-burger text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">برگر</span>
+            </a>
+            <a href="#salad" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-carrot text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">سالاد و پیش‌غذا</span>
+            </a>
+            <a href="#iced-coffee" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-snowflake text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">آیس‌کافی</span>
+            </a>
+            <a href="#ice-cream" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-ice-cream text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">بستنی</span>
+            </a>
+            <a href="#juice" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-lemon text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">آبمیوه</span>
+            </a>
+            <a href="#espresso-based" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-mug-hot text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">اسپرسو</span>
+            </a>
+            <a href="#hot-drinks" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-mug-saucer text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">گرم</span>
+            </a>
+            <a href="#tea" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-leaf text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">چای</span>
+            </a>
+            <a href="#dessert" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-cake-candles text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">کیک و دسر</span>
+            </a>
+            <a href="#brewed-coffee" class="flex flex-col items-center text-textDark p-2 rounded-lg transition-colors hover:bg-primary/10 flex-shrink-0 min-w-[70px]">
+                <div class="w-10 h-10 rounded-full border border-secondary flex items-center justify-center mb-1">
+                    <i class="fas fa-coffee text-xl text-secondary"></i>
+                </div>
+                <span class="text-sm font-bold">قهوه دمی</span>
+            </a>
         </nav>
     </header>
 
-    <main class="menu-container">
-        <section class="menu-category" id="breakfast">
-            <h2><i class="fas fa-egg"></i>صبحانه و املت</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/breakfast-traditional.jpg" alt="صبحانه سنتی">
-                    <h3>سنتی</h3>
-                    <p class="item-description">املت مخصوص، سوسیس، بیکن، قارچ، گوجه، نان تست.</p>
-                    <span class="item-price">۱۹۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/omelet-mushroom.jpg" alt="املت قارچ">
-                    <h3>قارچ</h3>
-                    <p class="item-description">املت قارچ با قارچ تازه، سبزیجات معطر و پنیر.</p>
-                    <span class="item-price">۲۳۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/omelet-spinach-mushroom.jpg" alt="املت قارچ و اسفناج">
-                    <h3>قارچ و اسفناج</h3>
-                    <p class="item-description">تخم مرغ، قارچ، اسفناج تازه، پنیر.</p>
-                    <span class="item-price">۲۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/omelet-spanish.jpg" alt="املت اسپانیایی">
-                    <h3>اسپانیایی</h3>
-                    <p class="item-description">املت سنتی اسپانیا با سیب‌زمینی و پیاز.</p>
-                    <span class="item-price">۳۲۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/omelet-broccoli.jpg" alt="املت بروکلی">
-                    <h3>بروکلی</h3>
-                    <p class="item-description">املت سالم با بروکلی تازه و پنیر پارمسان.</p>
-                    <span class="item-price">۲۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/half-fried-egg.jpg" alt="نیمرو">
-                    <h3>نیمرو</h3>
-                    <p class="item-description">نیمرو کلاسیک با کره و نان تازه.</p>
-                    <span class="item-price">۱۱۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/english-breakfast.jpg" alt="صبحانه انگلیسی">
-                    <h3>انگلیسی</h3>
-                    <p class="item-description">سوسیس، بیکن، تخم‌مرغ، لوبیا، قارچ و گوجه.</p>
-                    <span class="item-price">۴۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/bacon-fried-egg.jpg" alt="نیمرو بیکن">
-                    <h3>نیمرو بیکن</h3>
-                    <p class="item-description">نیمرو همراه با بیکن ترد.</p>
-                    <span class="item-price">۳۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/shakari-egg.jpg" alt="نیمرو شکاری">
-                    <h3>نیمرو شکاری</h3>
-                    <p class="item-description">نیمرو با سس مخصوص و گوشت چرخ‌کرده.</p>
-                    <span class="item-price">۳۸۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/khachapuri.jpg" alt="خاچاپوری">
-                    <h3>خاچاپوری</h3>
-                    <p class="item-description">نان پنیری گرجی با تخم‌مرغ پخته شده.</p>
-                    <span class="item-price">۳۲۰,۰۰۰ تومان</span>
+    <main class="max-w-4xl mx-auto p-5">
+
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="breakfast">
+            <i class="fas fa-egg ml-4 text-secondary"></i> صبحانه
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/english-breakfast.jpg" alt="صبحانه انگلیسی" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">انگلیسی</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">سوسیس، بیکن، تخم‌مرغ، لوبیا، قارچ و گوجه.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۴۰۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="menu-category" id="pizza">
-            <h2><i class="fas fa-pizza-slice"></i> پیتزا</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/pizza-garlic-steak.jpg" alt="پیتزا سیر و استیک">
-                    <h3>سیر و استیک</h3>
-                    <p class="item-description">استیک گوساله، سس سیر، پنیر موزارلا و سبزیجات تازه.</p>
-                    <span class="item-price">۷۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pizza-chicken-pesto.jpg" alt="پیتزا مرغ پستو">
-                    <h3>مرغ پستو</h3>
-                    <p class="item-description">مرغ گریل شده، سس پستو ریحان، پنیر و گوجه گیلاسی.</p>
-                    <span class="item-price">۴۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pizza-bacon-mushroom.jpg" alt="پیتزا بیکن و قارچ">
-                    <h3>بیکن و قارچ</h3>
-                    <p class="item-description">بیکن دودی، قارچ تازه، پنیر موزارلا و سس مخصوص.</p>
-                    <span class="item-price">۶۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pizza-vegetable.jpg" alt="پیتزا سبزیجات">
-                    <h3>سبزیجات</h3>
-                    <p class="item-description">مجموعه سبزیجات تازه فصل، زیتون، فلفل دلمه‌ای و پنیر.</p>
-                    <span class="item-price">۳۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pizza-salami.jpg" alt="پیتزا سالامی">
-                    <h3>سالامی</h3>
-                    <p class="item-description">سالامی ایتالیایی، پنیر موزارلا و سس گوجه مخصوص.</p>
-                    <span class="item-price">۵۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pizza-pepperoni.jpg" alt="پیتزا پپرونی">
-                    <h3>پپرونی</h3>
-                    <p class="item-description">پپرونی تند، سس مخصوص و پنیر فراوان.</p>
-                    <span class="item-price">۴۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pizza-margherita.jpg" alt="پیتزا مارگاریتا">
-                    <h3>مارگاریتا</h3>
-                    <p class="item-description">سس گوجه، پنیر موزارلا و ریحان تازه.</p>
-                    <span class="item-price">۳۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pizza-turkey.jpg" alt="پیتزا بوقلمون">
-                    <h3>بوقلمون</h3>
-                    <p class="item-description">ژامبون بوقلمون، قارچ و پنیر موزارلا.</p>
-                    <span class="item-price">۵۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pizza-ham-special.jpg" alt="پیتزا ژامبون مخصوص">
-                    <h3>ژامبون مخصوص</h3>
-                    <p class="item-description">ترکیبی از ژامبون، فلفل دلمه‌ای، قارچ و پنیر.</p>
-                    <span class="item-price">۸۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pizza-mashadi.jpg" alt="پیتزا مشهدی">
-                    <h3>مشهدی</h3>
-                    <p class="item-description">طعم خاص و محلی، با گوشت چرخ‌کرده و ادویه‌های مخصوص.</p>
-                    <span class="item-price">۷۰۰,۰۰۰ تومان</span>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/omelet-mushroom.jpg" alt="املت قارچ" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">املت قارچ</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">املت قارچ با قارچ تازه، سبزیجات معطر و پنیر.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۲۳۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="menu-category" id="pasta">
-            <h2><i class="fas fa-bacon"></i> پاستا</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/pasta-alfredo-chicken.jpg" alt="پاستا آلفردو چیکن">
-                    <h3>آلفردو چیکن</h3>
-                    <p class="item-description">پاستا فتوچینی با سس آلفردو خامه‌ای و مرغ گریل شده.</p>
-                    <span class="item-price">۳۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pasta-alfredo-pesto.jpg" alt="پاستا آلفردو پستو">
-                    <h3>آلفردو پستو</h3>
-                    <p class="item-description">پاستا با سس آلفردو و ریحان تازه، طعمی متفاوت.</p>
-                    <span class="item-price">۳۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pasta-beef-alfredo.jpg" alt="پاستا بیف آلفردو">
-                    <h3>بیف آلفردو</h3>
-                    <p class="item-description">پاستا با سس آلفردو، تکه‌های گوشت گوساله و قارچ.</p>
-                    <span class="item-price">۷۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pasta-arrabiata.jpg" alt="پاستا عربیتا">
-                    <h3>عربیتا</h3>
-                    <p class="item-description">پاستا پنه با سس تند گوجه و سیر.</p>
-                    <span class="item-price">۳۰۰,۰۰۰ تومان</span>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/omelet-spinach-mushroom.jpg" alt="املت قارچ و اسفناج" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">املت قارچ و اسفناج</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">تخم مرغ، قارچ، اسفناج تازه، پنیر.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۲۵۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="menu-category" id="steak">
-            <h2><i class="fas fa-drumstick-bite"></i> استیک</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/steak-t-bone.jpg" alt="استیک تی بون">
-                    <h3>تی بون</h3>
-                    <p class="item-description">تکه بزرگ و آب‌دار تی‌بون با دورچین سبزیجات.</p>
-                    <span class="item-price">۱,۷۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/steak-special.jpg" alt="استیک ویژه (دو نفره)">
-                    <h3>ویژه (دو نفره)</h3>
-                    <p class="item-description">استیک مخصوص بن‌سیمو با دورچین کامل برای دو نفر.</p>
-                    <span class="item-price">۱,۹۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/chicken-steak.jpg" alt="استیک مرغ">
-                    <h3>استیک مرغ</h3>
-                    <p class="item-description">سینه مرغ گریل شده با سس قارچ و پوره سیب‌زمینی.</p>
-                    <span class="item-price">۴۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/mezze-platter.jpg" alt="بشقاب مزه (دو نفره)">
-                    <h3>بشقاب مزه (دو نفره)</h3>
-                    <p class="item-description">مجموعه‌ای از بهترین مزه‌ها و پیش‌غذاهای ما برای دو نفر.</p>
-                    <span class="item-price">۹۵۰,۰۰۰ تومان</span>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/khachapuri.jpg" alt="خاچاپوری" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">خاچاپوری</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">نان پنیری گرجی با تخم‌مرغ پخته شده.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۳۲۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="menu-category" id="panini">
-            <h2><i class="fas fa-bread-slice"></i> پنینی</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/panini-garlic-steak.jpg" alt="پنینی سیر و استیک">
-                    <h3>سیر و استیک</h3>
-                    <p class="item-description">استیک، پنیر و سس سیر مخصوص در نان پنینی.</p>
-                    <span class="item-price">۵۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/panini-ham-grilled.jpg" alt="پنینی ژامبون تنوری">
-                    <h3>ژامبون تنوری</h3>
-                    <p class="item-description">ژامبون دودی تنوری با پنیر و سس آلفردو.</p>
-                    <span class="item-price">۳۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/panini-chicken-pesto.jpg" alt="پنینی مرغ و پستو">
-                    <h3>مرغ و پستو</h3>
-                    <p class="item-description">تکه‌های مرغ با سس پستو، پنیر و گوجه.</p>
-                    <span class="item-price">۳۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/panini-bacon-special.jpg" alt="پنینی بیکن ویژه">
-                    <h3>بیکن ویژه</h3>
-                    <p class="item-description">بیکن ترد، پنیر چدار و سس باربیکیو.</p>
-                    <span class="item-price">۴۵۰,۰۰۰ تومان</span>
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="pizza">
+            <i class="fas fa-pizza-slice ml-4 text-secondary"></i> پیتزا
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/pizza-garlic-steak.jpg" alt="پیتزا سیر و استیک" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">سیر و استیک</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">استیک گوساله، سس سیر، پنیر موزارلا و سبزیجات تازه.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۷۵۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="menu-category" id="burger">
-            <h2><i class="fas fa-hamburger"></i> برگر</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/burger-classic.jpg" alt="کلاسیک برگر">
-                    <h3>کلاسیک</h3>
-                    <p class="item-description">برگر گوشت خالص با کاهو، گوجه و سس کلاسیک.</p>
-                    <span class="item-price">۳۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/burger-cheeseburger.jpg" alt="چیز برگر">
-                    <h3>چیز برگر</h3>
-                    <p class="item-description">برگر کلاسیک با لایه‌ای از پنیر چدار آب شده.</p>
-                    <span class="item-price">۴۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/burger-mushroom.jpg" alt="ماشروم برگر">
-                    <h3>ماشروم برگر</h3>
-                    <p class="item-description">برگر گوشت با قارچ‌های تفت داده شده و سس قارچ.</p>
-                    <span class="item-price">۳۸۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/burger-bacon.jpg" alt="بیکن برگر">
-                    <h3>بیکن برگر</h3>
-                    <p class="item-description">برگر گوشت با بیکن دودی ترد و پنیر گودا.</p>
-                    <span class="item-price">۵۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/burger-chorizo.jpg" alt="چوریتسو برگر">
-                    <h3>چوریتسو برگر</h3>
-                    <p class="item-description">برگر با سوسیس چوریتسو، سس مخصوص و هالاپینو.</p>
-                    <span class="item-price">۴۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/burger-jalapeno.jpg" alt="هالوپینو برگر">
-                    <h3>هالوپینو برگر</h3>
-                    <p class="item-description">برگر تند با هالاپینو تازه، پنیر و سس چیلی.</p>
-                    <span class="item-price">۳۸۰,۰۰۰ تومان</span>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/pizza-chicken-pesto.jpg" alt="پیتزا مرغ پستو" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">مرغ پستو</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">مرغ گریل شده، سس پستو ریحان، پنیر و گوجه گیلاسی.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۴۵۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="menu-category" id="salad">
-            <h2><i class="fas fa-leaf"></i> سالاد</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/salad-caesar-new.jpg" alt="سالاد سزار">
-                    <h3>سالاد سزار</h3>
-                    <p class="item-description">کاهو، فیله مرغ گریل شده، کروتون و سس سزار مخصوص.</p>
-                    <span class="item-price">۳۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/salad-avocado-special.jpg" alt="سالاد ویژه آووکادو">
-                    <h3>سالاد ویژه آووکادو</h3>
-                    <p class="item-description">ترکیبی از سبزیجات تازه، آووکادو، مرغ و سس لیمو.</p>
-                    <span class="item-price">۴۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/vegetable-platter.jpg" alt="بشقاب سبزیجات">
-                    <h3>بشقاب سبزیجات</h3>
-                    <p class="item-description">مجموعه‌ای از سبزیجات تازه و فصلی با دیپ مخصوص.</p>
-                    <span class="item-price">۳۰۰,۰۰۰ تومان</span>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/pizza-bacon-mushroom.jpg" alt="پیتزا بیکن و قارچ" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">بیکن و قارچ</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">بیکن دودی، قارچ تازه، پنیر موزارلا و سس مخصوص.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۶۵۰,۰۰۰ تومان</span>
+                    </div>
+                    </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/pizza-vegetable.jpg" alt="پیتزا سبزیجات" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">سبزیجات</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">مجموعه سبزیجات تازه فصل، زیتون، فلفل دلمه‌ای و پنیر.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۳۵۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="menu-category" id="appetizer">
-            <h2><i class="fas fa-cookie-bite"></i> پیش غذا</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/french-fries-simple.jpg" alt="سیب زمینی ساده">
-                    <h3>سیب ساده</h3>
-                    <p class="item-description">سیب زمینی سرخ کرده کلاسیک با نمک.</p>
-                    <span class="item-price">۱۸۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/baked-potato.jpg" alt="سیب تنوری">
-                    <h3>سیب تنوری</h3>
-                    <p class="item-description">سیب زمینی تنوری با کره و سس مخصوص.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/french-fries-special.jpg" alt="سیب ویژه">
-                    <h3>سیب ویژه</h3>
-                    <p class="item-description">سیب زمینی سرخ کرده با پنیر آب شده و بیکن.</p>
-                    <span class="item-price">۳۰۰,۰۰۰ تومان</span>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/pizza-pepperoni.jpg" alt="پیتزا پپرونی" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">پپرونی</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">پپرونی تند، سس مخصوص و پنیر فراوان.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۴۰۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="menu-category" id="iced-coffee-bar">
-            <h2><i class="fas fa-ice-cream"></i> آیس کافی بار</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/iced-americano.jpg" alt="آیس آمریکانو">
-                    <h3>آیس آمریکانو</h3>
-                    <p class="item-description">اسپرسو، آب سرد، یخ.</p>
-                    <span class="item-price">۱۲۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/iced-caramel.jpg" alt="آیس کارامل">
-                    <h3>آیس کارامل</h3>
-                    <p class="item-description">اسپرسو، شیر سرد، سس کارامل، یخ.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/iced-latte.jpg" alt="آیس لاته">
-                    <h3>آیس لاته</h3>
-                    <p class="item-description">اسپرسو، شیر سرد، یخ.</p>
-                    <span class="item-price">۱۶۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/affogato.jpg" alt="آفوگاتو">
-                    <h3>آفوگاتو</h3>
-                    <p class="item-description">بستنی وانیلی با شات اسپرسو داغ.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/iced-mocha.jpg" alt="آیس موکا">
-                    <h3>آیس موکا</h3>
-                    <p class="item-description">اسپرسو، شیر، سس شکلات، یخ و خامه.</p>
-                    <span class="item-price">۱۶۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/frappuccino.jpg" alt="فراپاچینو">
-                    <h3>فراپاچینو</h3>
-                    <p class="item-description">نوشیدنی یخ‌زده بر پایه قهوه با خامه و سس.</p>
-                    <span class="item-price">۱۶۰,۰۰۰ تومان</span>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/pizza-margherita.jpg" alt="پیتزا مارگاریتا" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">مارگاریتا</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">سس گوجه، پنیر موزارلا و ریحان تازه.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۳۵۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="menu-category" id="ice-cream">
-            <h2><i class="fas fa-ice-cream"></i> بستنی</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/icecream-vanilla.jpg" alt="وانیل">
-                    <h3>وانیل</h3>
-                    <p class="item-description">بستنی وانیلی کلاسیک.</p>
-                    <span class="item-price">۷۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/icecream-chocolate.jpg" alt="شکلات">
-                    <h3>شکلات</h3>
-                    <p class="item-description">بستنی شکلاتی غنی.</p>
-                    <span class="item-price">۷۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/icecream-pistachio.jpg" alt="کره پسته">
-                    <h3>کره پسته</h3>
-                    <p class="item-description">بستنی با طعم لذیذ کره پسته.</p>
-                    <span class="item-price">۷۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/icecream-carrot.jpg" alt="هویج بستنی">
-                    <h3>هویج بستنی</h3>
-                    <p class="item-description">بستنی مخصوص با آب هویج تازه.</p>
-                    <span class="item-price">۷۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/icecream-dark-chocolate.jpg" alt="شکلات دارک">
-                    <h3>شکلات دارک</h3>
-                    <p class="item-description">بستنی شکلات تلخ و عمیق.</p>
-                    <span class="item-price">۷۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/icecream-strawberry.jpg" alt="توت فرنگی">
-                    <h3>توت فرنگی</h3>
-                    <p class="item-description">بستنی با طعم توت فرنگی تازه.</p>
-                    <span class="item-price">۷۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/icecream-blackberry.jpg" alt="شاتوت">
-                    <h3>شاتوت</h3>
-                    <p class="item-description">بستنی خنک و میوه‌ای شاتوت.</p>
-                    <span class="item-price">۷۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/icecream-coffee.jpg" alt="قهوه">
-                    <h3>قهوه</h3>
-                    <p class="item-description">بستنی با طعم اصیل قهوه.</p>
-                    <span class="item-price">۷۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/icecream-traditional.jpg" alt="سنتی">
-                    <h3>سنتی</h3>
-                    <p class="item-description">بستنی سنتی ایرانی با گلاب و پسته.</p>
-                    <span class="item-price">۷۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/faloudeh.jpg" alt="فالوده">
-                    <h3>فالوده</h3>
-                    <p class="item-description">فالوده شیرازی خنک و خوشمزه.</p>
-                    <span class="item-price">۷۰,۰۰۰ تومان</span>
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="pasta">
+            <i class="fa-solid fa-plate-wheat ml-4 text-secondary"></i> پاستا
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/pasta-alfredo-chicken.jpg" alt="پاستا آلفردو چیکن" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">آلفردو چیکن</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">پاستا فتوچینی با سس آلفردو خامه‌ای و مرغ گریل شده.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۳۵۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="menu-category" id="natural-juices">
-            <h2><i class="fas fa-lemon"></i> آبمیوه طبیعی</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/juice-carrot.jpg" alt="هویج">
-                    <h3>هویج</h3>
-                    <p class="item-description">آب هویج تازه و شیرین.</p>
-                    <span class="item-price">۹۵,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/juice-apple-grapefruit-carrot.jpg" alt="سیب گریت فروت هویج">
-                    <h3>سیب گریت فروت هویج</h3>
-                    <p class="item-description">ترکیب منحصر به فرد سیب، گریت فروت و هویج.</p>
-                    <span class="item-price">۱۲۵,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/juice-watermelon.jpg" alt="هندوانه">
-                    <h3>هندوانه</h3>
-                    <p class="item-description">آب هندوانه خنک و گوارا (فصلی).</p>
-                    <span class="item-price">۱۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/juice-banana-milk.jpg" alt="شیرموز">
-                    <h3>شیرموز</h3>
-                    <p class="item-description">ترکیب انرژی‌بخش موز و شیر تازه.</p>
-                    <span class="item-price">۹۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/juice-coconut-milk.jpg" alt="شیر نارگیل">
-                    <h3>شیر نارگیل</h3>
-                    <p class="item-description">شیر نارگیل خنک و استوایی.</p>
-                    <span class="item-price">۱۱۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/juice-cantaloupe.jpg" alt="آب طالبی">
-                    <h3>آب طالبی</h3>
-                    <p class="item-description">آب طالبی شیرین و خنک (فصلی).</p>
-                    <span class="item-price">۹۵,۰۰۰ تومان</span>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/pasta-beef-alfredo.jpg" alt="پاستا بیف آلفردو" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">بیف آلفردو</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">پاستا با سس آلفردو، تکه‌های گوشت گوساله و قارچ.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۷۰۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="menu-category" id="hot-coffee-drinks">
-            <h2><i class="fas fa-coffee"></i> نوشیدنی گرم بر پایه قهوه</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/espresso.jpg" alt="اسپرسو">
-                    <h3>اسپرسو</h3>
-                    <p class="item-description">شات غلیظ و معطر از دانه قهوه تازه رست شده.</p>
-                    <span class="item-price">۹۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/cappuccino.jpg" alt="کاپوچینو">
-                    <h3>کاپوچینو</h3>
-                    <p class="item-description">ترکیبی متعادل از اسپرسو، شیر بخارپز و فوم زیاد.</p>
-                    <span class="item-price">۱۳۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/latte.jpg" alt="لاته">
-                    <h3>لاته</h3>
-                    <p class="item-description">قهوه اسپرسو با شیر بخارپز و لایه نازک فوم شیر.</p>
-                    <span class="item-price">۱۴۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/caramel-macchiato.jpg" alt="کارامل ماکیاتو">
-                    <h3>کارامل ماکیاتو</h3>
-                    <p class="item-description">ترکیب اسپرسو، شیر و سس کارامل.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/americano.jpg" alt="آمریکانو">
-                    <h3>آمریکانو</h3>
-                    <p class="item-description">اسپرسو رقیق شده با آب داغ.</p>
-                    <span class="item-price">۹۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/nutella-latte.jpg" alt="نوتلا لته">
-                    <h3>نوتلا لته</h3>
-                    <p class="item-description">لته با طعم نوتلا و خامه.</p>
-                    <span class="item-price">۱۷۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/peanut-latte.jpg" alt="پینات لته">
-                    <h3>پینات لته</h3>
-                    <p class="item-description">لته با طعم کره بادام زمینی.</p>
-                    <span class="item-price">۱۶۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pistachio-latte.jpg" alt="پستاشو لته">
-                    <h3>پستاشو لته</h3>
-                    <p class="item-description">لته با طعم پسته و عطر دلنشین.</p>
-                    <span class="item-price">۲۰۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/honey-espresso.jpg" alt="هانی اسپرسو">
-                    <h3>هانی اسپرسو</h3>
-                    <p class="item-description">اسپرسو با کمی عسل طبیعی.</p>
-                    <span class="item-price">۱۲۵,۰۰۰ تومان</span> </div>
-                <div class="menu-item">
-                    <img src="images/con-panna.jpg" alt="کن پانا">
-                    <h3>کن پانا</h3>
-                    <p class="item-description">اسپرسو با لایه ضخیم خامه زده شده.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/matcha-latte.jpg" alt="ماچا لته">
-                    <h3>ماچا لته</h3>
-                    <p class="item-description">لته با پودر ماچا ژاپنی.</p>
-                    <span class="item-price">۱۶۰,۰۰۰ تومان</span>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/pasta-arrabiata.jpg" alt="پاستا عربیتا" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">عربیتا</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">پاستا پنه با سس تند گوجه و سیر.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۳۰۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="menu-category" id="tea-herbal-tea">
-            <h2><i class="fas fa-mug-hot"></i> چای و دمنوش</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/black-tea.jpg" alt="چای سیاه">
-                    <h3>چای سیاه</h3>
-                    <p class="item-description">چای سیاه تازه دم با عطر دلخواه.</p>
-                    <span class="item-price">۸۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/relaxation-herbal-tea.jpg" alt="دمنوش آرامش">
-                    <h3>دمنوش آرامش</h3>
-                    <p class="item-description">ترکیبی از گیاهان آرامش‌بخش.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/health-herbal-tea.jpg" alt="دمنوش سلامت">
-                    <h3>دمنوش سلامت</h3>
-                    <p class="item-description">دمنوش با خواص درمانی و تقویتی.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/energy-herbal-tea.jpg" alt="دمنوش انرژی">
-                    <h3>دمنوش انرژی</h3>
-                    <p class="item-description">دمنوش با ترکیبات انرژی‌زا و نشاط‌آور.</p>
-                    <span class="item-price">۱۸۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/apple-paradise-tea.jpg" alt="اپل پارادایس">
-                    <h3>اپل پارادایس</h3>
-                    <p class="item-description">دمنوش سیب با طعم دارچین و هل.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/moroccan-tea.jpg" alt="چای مراکشی">
-                    <h3>چای مراکشی</h3>
-                    <p class="item-description">چای سبز مراکشی با نعناع تازه.</p>
-                    <span class="item-price">۱۲۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/hot-chocolate.jpg" alt="هات چاکلت">
-                    <h3>هات چاکلت</h3>
-                    <p class="item-description">شکلات گرم غلیظ و خامه‌ای.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/hot-chocolate-hazelnut.jpg" alt="هات چاکلت فندق">
-                    <h3>هات چاکلت فندق</h3>
-                    <p class="item-description">شکلات گرم با طعم فندق.</p>
-                    <span class="item-price">۱۶۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/matcha.jpg" alt="ماچا">
-                    <h3>ماچا</h3>
-                    <p class="item-description">چای سبز پودر شده ژاپنی.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/chai-masala.jpg" alt="ماسالا">
-                    <h3>ماسالا</h3>
-                    <p class="item-description">ترکیبی از چای سیاه و ادویه‌های هندی.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/milk-honey-cinnamon.jpg" alt="شیرعسل دارچین">
-                    <h3>شیرعسل دارچین</h3>
-                    <p class="item-description">نوشیدنی گرم شیر، عسل و دارچین.</p>
-                    <span class="item-price">۱۳۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/pink-chocolate.jpg" alt="پینک چاکلت">
-                    <h3>پینک چاکلت</h3>
-                    <p class="item-description">شکلات گرم با طعم و رنگی خاص.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
+        </div>
+        
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="steak">
+            <i class="fas fa-drumstick-bite ml-4 text-secondary"></i> استیک
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/steak-t-bone.jpg" alt="استیک تی بون" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">تی بون</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">تکه بزرگ و آب‌دار تی‌بون با دورچین سبزیجات.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱,۷۰۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="menu-category" id="desserts">
-            <h2><i class="fas fa-cake-candles"></i> کیک و دسر</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/cake-double-chocolate.jpg" alt="کیک دبل چاکلت">
-                    <h3>کیک دبل چاکلت</h3>
-                    <p class="item-description">کیک شکلاتی مرطوب با دو لایه گاناش شکلات.</p>
-                    <span class="item-price">۱۸۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/cake-apple-cinnamon.jpg" alt="کیک سیب دارچین">
-                    <h3>سیب دارچین</h3>
-                    <p class="item-description">کیک سیب با عطر دارچین و بافتی نرم.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/tiramisu.jpg" alt="تیرامیسو">
-                    <h3>تیرامیسو</h3>
-                    <p class="item-description">دسر ایتالیایی تیرامیسو با کرم ماسکارپونه و قهوه.</p>
-                    <span class="item-price">۱۵۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/cheesecake.jpg" alt="چیزکیک">
-                    <h3>چیزکیک</h3>
-                    <p class="item-description">چیزکیک خامه‌ای با طعم‌های متنوع.</p>
-                    <span class="item-price">۱۶۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/san-sebastian-cheesecake.jpg" alt="چیزکیک سباستین">
-                    <h3>چیزکیک سباستین</h3>
-                    <p class="item-description">چیزکیک سوخته اسپانیایی، بسیار خامه‌ای و لذیذ.</p>
-                    <span class="item-price">۱۹۰,۰۰۰ تومان</span>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/chicken-steak.jpg" alt="استیک مرغ" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">استیک مرغ</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">سینه مرغ گریل شده با سس قارچ و پوره سیب‌زمینی.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۴۵۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="menu-category" id="brewed-coffee">
-            <h2><i class="fas fa-mug-hot"></i> قهوه‌های دمی</h2>
-            <div class="menu-items-grid">
-                <div class="menu-item">
-                    <img src="images/turkish-coffee.jpg" alt="قهوه ترک">
-                    <h3>ترک</h3>
-                    <p class="item-description">قهوه سنتی ترک، غلیظ و معطر.</p>
-                    <span class="item-price">۱۴۰,۰۰۰ تومان</span>
-                </div>
-                <div class="menu-item">
-                    <img src="images/french-coffee.jpg" alt="قهوه فرانسه">
-                    <h3>فرانسه</h3>
-                    <p class="item-description">قهوه دمی فرانسه، با طعمی ملایم و دلنشین.</p>
-                    <span class="item-price">۱۱۰,۰۰۰ تومان</span>
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="panini">
+            <i class="fas fa-bread-slice ml-4 text-secondary"></i> پنینی
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/panini-garlic-steak.jpg" alt="پنینی سیر و استیک" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">سیر و استیک</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">استیک، پنیر و سس سیر مخصوص در نان پنینی.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۵۰۰,۰۰۰ تومان</span>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/panini-chicken-pesto.jpg" alt="پنینی مرغ و پستو" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">مرغ و پستو</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">تکه‌های مرغ با سس پستو، پنیر و گوجه.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۳۰۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="burger">
+            <i class="fas fa-hamburger ml-4 text-secondary"></i> برگر
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/burger-classic.jpg" alt="کلاسیک برگر" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">کلاسیک</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">برگر گوشت خالص با کاهو، گوجه و سس کلاسیک.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۳۵۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/burger-cheeseburger.jpg" alt="چیز برگر" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">چیز برگر</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">برگر کلاسیک با لایه‌ای از پنیر چدار آب شده.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۴۰۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/burger-mushroom.jpg" alt="ماشروم برگر" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">ماشروم برگر</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">برگر گوشت با قارچ‌های تفت داده شده و سس قارچ.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۳۸۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="salad">
+            <i class="fas fa-leaf ml-4 text-secondary"></i> سالاد و پیش غذا
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/salad-caesar-new.jpg" alt="سالاد سزار" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">سالاد سزار</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">کاهو، فیله مرغ گریل شده، کروتون و سس سزار مخصوص.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۳۵۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/salad-avocado-special.jpg" alt="سالاد ویژه آووکادو" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">سالاد ویژه آووکادو</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">ترکیبی از سبزیجات تازه، آووکادو، مرغ و سس لیمو.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۴۰۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/french-fries-simple.jpg" alt="سیب زمینی ساده" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">سیب ساده</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">سیب زمینی سرخ کرده کلاسیک با نمک.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۸۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/french-fries-special.jpg" alt="سیب ویژه" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">سیب ویژه</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">سیب زمینی سرخ کرده با پنیر آب شده و بیکن.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۳۰۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="iced-coffee">
+            <i class="fas fa-ice-cream ml-4 text-secondary"></i> آیس کافی بار
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/iced-americano.jpg" alt="آیس آمریکانو" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">آیس آمریکانو</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">اسپرسو، آب سرد، یخ.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۲۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/iced-latte.jpg" alt="آیس لاته" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">آیس لاته</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">اسپرسو، شیر سرد، یخ.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۶۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/affogato.jpg" alt="آفوگاتو" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">آفوگاتو</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">بستنی وانیلی با شات اسپرسو داغ.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۵۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="ice-cream">
+            <i class="fas fa-ice-cream ml-4 text-secondary"></i> بستنی
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/icecream-vanilla.jpg" alt="وانیل" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">وانیل</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">بستنی وانیلی کلاسیک.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۷۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/icecream-chocolate.jpg" alt="شکلات" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">شکلات</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">بستنی شکلاتی غنی.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۷۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/faloudeh.jpg" alt="فالوده" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">فالوده</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">فالوده شیرازی خنک و خوشمزه.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۷۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="juice">
+            <i class="fas fa-lemon ml-4 text-secondary"></i> آبمیوه طبیعی
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/juice-carrot.jpg" alt="هویج" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">هویج</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">آب هویج تازه و شیرین.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۹۵,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/juice-watermelon.jpg" alt="هندوانه" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">هندوانه</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">آب هندوانه خنک و گوارا (فصلی).</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۰۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/juice-banana-milk.jpg" alt="شیرموز" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">شیرموز</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">ترکیب انرژی‌بخش موز و شیر تازه.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۹۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="espresso-based">
+            <i class="fas fa-coffee ml-4 text-secondary"></i> نوشیدنی گرم برپایه اسپرسو
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/espresso.jpg" alt="اسپرسو" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">اسپرسو</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">شات غلیظ و معطر از دانه قهوه تازه رست شده.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۹۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/cappuccino.jpg" alt="کاپوچینو" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">کاپوچینو</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">ترکیبی متعادل از اسپرسو، شیر بخارپز و فوم زیاد.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۳۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/latte.jpg" alt="لاته" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">لاته</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">قهوه اسپرسو با شیر بخارپز و لایه نازک فوم شیر.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۴۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="hot-drinks">
+            <i class="fas fa-mug-hot ml-4 text-secondary"></i> نوشیدنی گرم
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/hot-chocolate.jpg" alt="هات چاکلت" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">هات چاکلت</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">شکلات گرم غلیظ و خامه‌ای.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۵۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/chai-masala.jpg" alt="ماسالا" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">ماسالا</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">ترکیبی از چای سیاه و ادویه‌های هندی.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۵۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="tea">
+            <i class="fas fa-leaf ml-4 text-secondary"></i> چای و دمنوش
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/black-tea.jpg" alt="چای سیاه" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">چای سیاه</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">چای سیاه تازه دم با عطر دلخواه.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۸۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/moroccan-tea.jpg" alt="چای مراکشی" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">چای مراکشی</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">چای سبز مراکشی با نعناع تازه.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۲۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="dessert">
+            <i class="fas fa-cake-candles ml-4 text-secondary"></i> کیک و دسر
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/cake-double-chocolate.jpg" alt="کیک دبل چاکلت" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">کیک دبل چاکلت</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">کیک شکلاتی مرطوب با دو لایه گاناش شکلات.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۸۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/cheesecake.jpg" alt="چیزکیک" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">چیزکیک</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">چیزکیک خامه‌ای با طعم‌های متنوع.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۶۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-title text-2xl sm:text-3xl text-primary mt-10 mb-6 pb-2 border-b-2 border-accent flex items-center" id="brewed-coffee">
+            <i class="fas fa-mug-hot ml-4 text-secondary"></i> قهوه های دمی
+        </h2>
+        <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/turkish-coffee.jpg" alt="قهوه ترک" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">ترک</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">قهوه سنتی ترک، غلیظ و معطر.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۴۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card bg-cardBg rounded-xl border border-cardBorder shadow-sm overflow-hidden transition-all duration-200 ease-in-out flex items-center hover:translate-y-[-3px] hover:shadow-lg hover:shadow-primary/10">
+                <img src="images/french-coffee.jpg" alt="قهوه فرانسه" class="w-24 h-24 object-cover rounded-lg m-4 flex-shrink-0 order-1">
+                <div class="card-content p-4 flex-grow flex flex-col justify-center order-2">
+                    <h3 class="item-name text-lg font-bold text-primary mb-1">فرانسه</h3>
+                    <p class="item-description text-sm text-textDark leading-relaxed mb-2 flex-grow">قهوه دمی فرانسه، با طعمی ملایم و دلنشین.</p>
+                    <div class="item-footer flex justify-end items-center mt-auto">
+                        <span class="item-price text-base font-bold text-priceText bg-priceBg py-1 px-3 rounded-full">۱۱۰,۰۰۰ تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer class="main-footer">
-        <h3><i class="fas fa-map-marker-alt"></i> اطلاعات تماس کافه بن‌سیمو</h3>
-        <p>آدرس: آجودانیه</p>
-        <p>تلفن: <a href="tel:+982112345678"> ۰۲۱۱۲۳۴۵۶۷۸</a></p>
-        <p>ساعات کاری: هر روز از ۸ صبح تا ۱۱ شب</p>
-        <div class="social-links">
-            <a href="https://instagram.com/bensimu_cafe" target="_blank" aria-label="اینستاگرام بن‌سیمو"><i class="fab fa-instagram"></i></a>
-            <a href="https://t.me/bensimu_cafe" target="_blank" aria-label="تلگرام بن‌سیمو"><i class="fab fa-telegram-plane"></i></a>
-        </div>
-        <p class="copyright">&copy; <span id="current-year"></span> کافه بن‌سیمو. تمامی حقوق محفوظ است.</p>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const header = document.querySelector('.main-header');
-            const htmlElement = document.documentElement;
-
-            function adjustScrollPadding() {
-                const headerHeight = header.offsetHeight;
-                const extraPadding = 10; 
-                htmlElement.style.scrollPaddingTop = `${headerHeight + extraPadding}px`;
-            }
-
-            adjustScrollPadding();
-            window.addEventListener('resize', adjustScrollPadding);
-
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        });
-    </script>
+    <!-- External JavaScript file -->
+    <script src="script.js"></script>
 
 </body>
 </html>
